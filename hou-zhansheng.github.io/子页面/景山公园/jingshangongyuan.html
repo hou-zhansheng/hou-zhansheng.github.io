@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 设置所有元素的边距和内边距为0，并设置box-sizing为border-box，使元素的宽度和高度包括边框和内边距 */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box
+			}
+ 
+			/* 设置body的居中显示，最小高度为100vh，背景颜色为#1a252c */
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				background-color: #1a252c;
+			}
+ 
+			/* 设置容器的相对定位，居中显示，设置transform-origin为preserve-3d */
+			.container {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transform-origin: preserve-3d;
+			}
+ 
+			/* 设置box的宽度、高度、相对定位、过渡效果、设置-webkit-box-reflect为下方1px的线性渐变 */
+			.container .box {
+				width: 300px;
+				height: 300px;
+				position: relative;
+				transition: .5s;
+				-webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+			}
+ 
+			/* 设置box的绝对定位，宽度、高度为100% */
+			.container .box img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+ 
+			/* 设置鼠标悬停时，非悬停元素的边距为-20px，设置filter为drop-shadow(0 0 25px #000) drop-shadow(0 0 25px #000)，设置transform为perspective(500px) rotateY(45deg) scale(0.95) */
+			.container:hover> :not(:hover) {
+				margin: 0 -20px;
+				filter: drop-shadow(0 0 25px #000) drop-shadow(0 0 25px #000);
+				transform: perspective(500px) rotateY(45deg) scale(0.95);
+			}
+ 
+			/* 设置鼠标悬停时，box的兄弟元素的transform为perspective(500px) rotateY(-45deg) scale(0.95) */
+			.container .box:hover~.box {
+				transform: perspective(500px) rotateY(-45deg) scale(0.95);
+			}
+ 
+			/* 设置鼠标悬停时，box的transform为perspective(500px) rotateY(0) scale(1.2) */
+			.container .box:hover {
+				transform: perspective(500px) rotateY(0) scale(1.2);
+			}
+            .music {
+				position: fixed;
+				top: 10px;
+				right: 50%;
+				z-index: 9999;
+			}
+		</style>
+ 
+	</head>
+	<body>
+		<!-- 设置容器的class为container -->
+		<div class="container">
+			<!-- 设置box的class为box，并设置img的src为1.webp -->
+			<div class="box">
+				<img src="d (1).jpg" alt="" />
+			</div>
+			<!-- 设置box的class为box，并设置img的src为2.webp -->
+			<div class="box">
+				<img src="d (2).jpg" alt="" />
+			</div>
+			<!-- 设置box的class为box，并设置img的src为3.webp -->
+		
+			<!-- 设置box的class为box，并设置img的src为4.webp -->
+			<div class="box">
+				<img src="d (4).jpg" alt="" />
+			</div>
+			<!-- 设置box的class为box，并设置img的src为5.webp -->
+			<div class="box">
+				<img src="d (5).jpg" alt="" />
+			</div>
+			<!-- 设置box的class为box，并设置img的src为6.webp -->
+			<div class="box">
+				<img src="d (5).jpg" alt="" />
+			</div>
+		</div>
+        <div class="music">
+            <audio src="略略 - 鸳鸯戏 (哎呦小情郎你莫愁) [qmms].ogg" class="music" controls autoplay loop></audio>
+        </div>
+	</body>
+</html>
